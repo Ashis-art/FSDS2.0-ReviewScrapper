@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Review Page</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+      <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+</head>
+
+<body style="background-color: #91ced4">
+
+  <div class="table-users" style="border: 1px solid #327a81;
+  border-radius: 10px;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+  max-width: calc(100% - 2em);
+  margin: 1em auto;
+  overflow: hidden;
+  width: 800px;">
+   <div class="header" style="background-color: #327a81;
+   color: white;
+   font-size: 1.5em;
+   padding: 1rem;
+   text-align: center;
+   text-transform: uppercase;">Reviews</div>
+
+   <table cellspacing="0" style="width: 100%;"> 
+      <tr>
+         <th style="color: #2b686e; padding: 10px; background-color: #daeff1;
+         font-weight: 300;">Product</th>
+         <th style="color: #2b686e; padding: 10px;background-color: #daeff1;
+    font-weight: 300;">Name</th>
+         <th style="color: #2b686e; padding: 10px;background-color: #daeff1;
+    font-weight: 300;">Rating</th>
+         <th style="color: #2b686e; padding: 10px;background-color: #daeff1;
+    font-weight: 300;">Comment Heading</th>
+         <th width="230" style="color: #2b686e; padding: 10px;background-color: #daeff1;
+    font-weight: 300;">Comments</th>
+      </tr>
+         {% for review in reviews %}
+      <tr>
+          <td style="color: #2b686e; padding: 10px; text-align: center;vertical-align: middle;">{{review['Product']}}</td>
+         <td style="color: #2b686e; padding: 10px; text-align: center;vertical-align: middle;">{{review['Name']}}</td>
+         <td style="color: #2b686e; padding: 10px; text-align: center;vertical-align: middle;">{{review['Rating']}}</td>
+         <td style="color: #2b686e; padding: 10px; text-align: center;vertical-align: middle;">{{review['CommentHead']}}</td>
+         <td style="color: #2b686e; padding: 10px; text-align: center;vertical-align: middle;">{{review['Comment']}} </td>
+       {% endfor %}
+   </table>
+</div>
+
+
+
+</body>
+
+</html>
