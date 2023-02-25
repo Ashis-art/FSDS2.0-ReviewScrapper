@@ -70,7 +70,7 @@ def index():
                 mydict = {"Product": searchString, "Name": name, "Rating": rating, "CommentHead": commentHead,
                           "Comment": custComment}
                 reviews.append(mydict)
-            return render_template('result.html', reviews=reviews[0:(len(reviews)-1)])
+            return render_template('results.html', reviews=reviews[0:(len(reviews)-1)])
         except Exception as e:
             print('The Exception message is: ',e)
             return 'something is wrong'
@@ -80,5 +80,5 @@ def index():
         return render_template('index.html')
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=8002, debug=False)
+    app.run(host='0.0.0.0', port=8000, debug=False)
 	# app.run(debug=True)
